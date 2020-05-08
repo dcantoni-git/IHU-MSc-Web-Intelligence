@@ -1,0 +1,25 @@
+import os
+
+from bs4 import BeautifulSoup
+
+xml_path ="C:/Users/Jim/Documents/Ergasia_IR/MiniCollection/XML_Topics/"
+sgml_path="C:/Users/Jim/Documents/Ergasia_IR/MiniCollection/SGML_Topics/"
+# Paths with forward slashes. 
+
+for files in os.listdir(xml_path):
+    print(files)
+    if files.endswith(".xml"):
+        content = open(xml_path+"/"+files,'r',encoding='utf8').read()
+        soup = BeautifulSoup(content,'lxml')
+        inv_title=soup.findAll("invention-title")   # xml tag name
+        abstract=soup.findAll("abstract")
+        f=open(sgml_path+"/"+"SGML_Topics.txt",'a+',encoding='utf8')
+        f.write("<TOP>\n<NUM>"+os.path.splitext(files)[0]+"</NUM>\n<TITLE>\n") 
+        for text in inv_title:    # Add for loop to write the content of the xml to the txt file 
+            invt=text.getText()
+            f.write(invt+" ") 
+        for text in abstract:
+            abstr=text.getText()
+            f.write(abstr+" ")  
+        f.write("\n</TITLE>\n</TOP>\n")
+        f.close()
