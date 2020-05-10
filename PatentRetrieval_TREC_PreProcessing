@@ -1,0 +1,77 @@
+import os , time , re
+
+from bs4 import BeautifulSoup
+
+from pathlib import Path
+
+start_time=time.time()
+
+from_path="C:/Users/Jim/Documents/Ergasia_IR/MiniCollection/Test_HL4/"
+to_path="C:/Users/Jim/Documents/Ergasia_IR/MiniCollection/Test_HL4/ConvertedCollection/"
+# Paths with forward slashes
+
+for files in os.listdir(from_path):
+    to_file=Path(to_path+"/"+files)
+    if  files.endswith(".txt") and not to_file.exists():
+        print(files)
+        content = open(from_path+"/"+files,'r',encoding='utf8').read()
+        soup = BeautifulSoup(content,'html.parser')
+        
+        # classifications tag pre-process: convert digit 0 to O and 1-9 to a-i
+  
+        clf=soup.find('classifications')
+        if clf is not None:
+            clf_text=clf.getText()
+            clf_list=list(clf_text)
+            for i in range(len(clf_list)):
+                if clf_list[i].isnumeric() and clf_list[i]!="0":
+                  clf_list[i]=chr(ord('`')+int(clf_list[i]))  # For conversion to capital letters use @ 
+                if clf_list[i]=="0":
+                    clf_list[i]="O"
+            clf_string=''.join(clf_list)
+            clf.string.replace_with(clf_string)
+            
+        # classifications-fourth tag pre-process: convert digit 0 to O
+        
+        clf4=soup.find('classifications-fourth')
+        if clf4 is not None:
+            clf4_text=clf4.getText()
+            clf4_list=list(clf4_text)
+            for i in range(len(clf4_list)):
+                if clf4_list[i]=="0":
+                    clf4_list[i]="O"
+            clf4_string=''.join(clf4_list)
+            clf4.string.replace_with(clf4_string)
+            
+        # invention-title, abstract, description and claims tag pre-process: remove numbers and non-ascii characters
+            
+        inv_title=soup.find('invention-title')
+        if inv_title is not None:
+            invt=inv_title.getText()
+            invt=re.sub("(\\W|\\d)"," ",invt)
+            inv_title.string.replace_with(invt)
+            
+        abstract=soup.find('abstract')
+        if abstract is not None:
+            abstr=abstract.getText()
+            abstr=re.sub("(\\W|\\d)"," ",abstr)
+            abstract.string.replace_with(abstr)
+            
+        description=soup.find('description')
+        if description is not None:
+            descr=description.getText()
+            descr=re.sub("(\\W|\\d)"," ",descr)
+            description.string.replace_with(descr)
+            
+        claims=soup.find('claims')
+        if claims is not None:
+            cl=claims.getText()
+            cl=re.sub("(\\W|\\d)"," ",cl)
+            claims.string.replace_with(cl)
+            
+        f=open(to_path+"/"+files,'a+',encoding='utf8')
+        f.write(str(soup))
+        f.close()
+
+elapsed_time=time.time()-start_time
+print(elapsed_time)
