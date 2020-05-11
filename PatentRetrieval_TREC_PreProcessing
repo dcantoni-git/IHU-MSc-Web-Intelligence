@@ -17,7 +17,7 @@ for files in os.listdir(from_path):
         content = open(from_path+"/"+files,'r',encoding='utf8').read()
         soup = BeautifulSoup(content,'html.parser')
         
-        # classifications tag pre-process: convert digit 0 to O and 1-9 to a-i
+        # classifications tag pre-process: Convert digit 0 to O and 1-9 to a-i
   
         clf=soup.find('classifications')
         if clf is not None:
@@ -31,7 +31,7 @@ for files in os.listdir(from_path):
             clf_string=''.join(clf_list)
             clf.string.replace_with(clf_string)
             
-        # classifications-fourth tag pre-process: convert digit 0 to O
+        # classifications-fourth tag pre-process: Convert digit 0 to O
         
         clf4=soup.find('classifications-fourth')
         if clf4 is not None:
@@ -43,7 +43,7 @@ for files in os.listdir(from_path):
             clf4_string=''.join(clf4_list)
             clf4.string.replace_with(clf4_string)
             
-        # invention-title, abstract, description and claims tag pre-process: remove numbers and non-ascii characters
+        # invention-title, abstract, description and claims tag pre-process: Noise removal
             
         inv_title=soup.find('invention-title')
         if inv_title is not None:
