@@ -1,0 +1,16 @@
+BEFORE PRE-PROCESSING:
+
+<CLASSIFICATIONS-IPCR>
+A61K  31/47        20060101AFI20051220RMJP        A61K  31/47        20060101CFI20051220RMJP        A61K  31/55        20060101A I20051008RMEP        A61K  31/55        20060101C I20051008RMEP        A61P  25/00        20060101CLI20051220RMJP        A61P  25/24        20060101ALI20051220RMJP        A61P  25/26        20060101ALI20051220RMJP        A61K  31/47        20060101CFI20051220RMJP        A61K  31/47        20060101AFI20051220RMJP        A61K  31/55        20060101C I20051008RMEP        A61P  25/24        20060101ALI20051220RMJP        A61K  31/55        20060101A I20051008RMEP        A61P  25/26        20060101ALI20051220RMJP        A61P  25/00        20060101CLI20051220RMJP
+</CLASSIFICATIONS-IPCR> 
+
+<ABSTRACT>
+Arzneimittel, die als Wirkstoff A eine Verbindung der \nFormel I \n \nin der R\xe2\x82\x81, R\xe2\x82\x83 und R\xe2\x82\x84 gleich oder verschieden sein k\xc3\xb6nnen und \nWasserstoffatome oder niedere Alkyl- oder Aralkylgruppen \nund R\xe2\x82\x82 und R \xe2\x80\xb2 / 2 gleich oder verschieden sein K\xc3\xb6nnen und \nWasserstoff- oder Halogenatome, Hydroxy- oder Trifluormethylgruppen \noder niedere Alkyl-, Alkoxy- oder Aralkoxygruppen \nbedeuten, wobei 2 benachbarte Reste auch zusammen \nein Alkylendioxyrest sein k\xc3\xb6nnen, und R\xe2\x82\x85 ein \nWasserstoff- oder Halogenatom, eine Hydroxy-, \nTrifluormethyl- oder Nitrogruppe oder einen niederen Alkyl-, \nAlkoxy- oder Aralkoxyrest bedeuten oder deren Salze mit \nS\xc3\xa4uren und als Wirkstoff B 7-Chlor-1- methyl-5- phenyl-1 H-1,5-benzodiazepin-2,4 \n(3H, 5H)-dion enthalten und ihre Verwendung \nzur Behandlung von Depressionen. '
+</ABSTRACT>
+
+
+AFTER PRE-PROCESSING:
+
+<classifications-ipcr>AfaK AfaKca AfaKcaXdg AfaK AfaKca AfaKcaXdg AfaK AfaKca AfaKcaXee AfaK AfaKca AfaKcaXee AfaP AfaPbe AfaPbeXOO AfaP AfaPbe AfaPbeXbd AfaP AfaPbe AfaPbeXbf AfaK AfaKca AfaKcaXdg AfaK AfaKca AfaKcaXdg AfaK AfaKca AfaKcaXee AfaP AfaPbe AfaPbeXbd AfaK AfaKca AfaKcaXee AfaP AfaPbe AfaPbeXbf AfaP AfaPbe AfaPbeXOO</classifications-ipcr>
+
+<abstract> Arzneimittel  die als Wirkstoff  eine Verbindung der  Formel   der           und       gleich oder verschieden sein    nnen und  Wasserstoffatome oder niedere Alkyl  oder Aralkylgruppen  und       und          gleich oder verschieden sein    nnen und  Wasserstoff  oder Halogenatome  Hydroxy  oder Trifluormethylgruppen  oder niedere Alkyl   Alkoxy  oder Aralkoxygruppen  bedeuten  wobei   benachbarte Reste auch zusammen  ein Alkylendioxyrest sein    nnen  und       ein  Wasserstoff  oder Halogenatom  eine Hydroxy    Trifluormethyl  oder Nitrogruppe oder einen niederen Alkyl    Alkoxy  oder Aralkoxyrest bedeuten oder deren Salze mit    uren und als Wirkstoff    Chlor    methyl    phenyl      benzodiazepin    dion enthalten und ihre Verwendung  zur Behandlung von Depressionen    </abstract>
